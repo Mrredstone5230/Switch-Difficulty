@@ -57,6 +57,20 @@ public final class SwitchDifficulty extends JavaPlugin implements CommandExecuto
         if (args[0].equalsIgnoreCase("reload")) {
             if (isAdmin) {
                 reloadConfig();
+                enabled.clear();
+                if (getConfig().getBoolean("enabled.peaceful") == true) {
+                    enabled.add(Difficulty.PEACEFUL);
+                }
+                if (getConfig().getBoolean("enabled.easy") == true) {
+                    enabled.add(Difficulty.EASY);
+                }
+                if (getConfig().getBoolean("enabled.normal") == true) {
+                    enabled.add(Difficulty.NORMAL);
+                }
+                if (getConfig().getBoolean("enabled.hard") == true) {
+                    enabled.add(Difficulty.HARD);
+                }
+
                 sender.sendMessage(ChatColor.GREEN + "Configuration file reloaded !");
                 return true;
             }
