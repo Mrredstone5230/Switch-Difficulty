@@ -1,0 +1,14 @@
+name: SwitchDifficulty
+version: ${project.version}
+main: me.mr_redstone5230.switchdifficulty.SwitchDifficulty
+api-version: 1.16
+authors: [ Mr_redstone5230 ]
+
+commands:
+  switch-difficulty:
+    description: Command used to change the difficulty of the world a player's in.
+
+permissions:
+  switch-difficulty.reload:
+    description: Allows to do /switch-difficulty reload
+    default: op
